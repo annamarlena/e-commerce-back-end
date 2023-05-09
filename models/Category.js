@@ -5,15 +5,15 @@ class Category extends Model {}
 
 Category.init(
   {
-    // define columns
-      //   * Doesn't allow null values.
-      //   * Set as primary key.
-      //   * Uses auto increment.
     id: {
-      type: DataTypes.INTEGER  
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,  
+      autoIncrement: true
     },
     categoryName: {
-      type: DataTypes.STRING   //   * Doesn't allow null values.
+      type: DataTypes.STRING,   
+      allowNull: false
     }
   },
   {
