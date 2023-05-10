@@ -45,15 +45,18 @@ router.post('/', async (req, res) => {
 
 // UPDATE a category by its id value
 router.put('/:id', (req, res) => {
-  Category.update(req.body, {
-    where: {
-      id: req.params.id,
-    },
-  })
-    .then((Category) => {
-      return Category.findAll({ where: { category_id: req.params.id } });
+  Category.update(
+    req.body, 
+    {
+      where: {
+        id: req.params.id,
+      },
+    }
+  )
+    .then((updatedCategory) => {
+      res.json(updatedCategory);
     })
-    .then //// Not sure how to proceed from here ---------------------------
+    .catch((err) => res.json(err));
 });
 
 // DELETE a category by its `id` value
