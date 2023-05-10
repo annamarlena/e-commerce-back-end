@@ -5,7 +5,7 @@ const { Product, Category, Tag, ProductTag } = require('../../models');
 
 // GET all products
 router.get('/', async (req, res) => {
-  // be sure to include its associated Category and Tag data
+  // be sure to include its associated Category and Tag data  <---- what is this? Can I use Gary's way below instead?
   try {
     const productData = await Product.findAll();
     res.status(200).json(productData);
@@ -13,6 +13,16 @@ router.get('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+/* 
+
+OR use Gary's way?: 
+
+router.get('/', async (req, res) => res.json( await Product.findAll() ))
+
+(5/3/23 01:31 also shows how to do this with get by id)
+
+*/ 
 
 // GET one product
 router.get('/:id', async (req, res) => {
@@ -33,18 +43,15 @@ router.get('/:id', async (req, res) => {
 });
 
 // CREATE a new product
-router.post('/', async (req, res) => {
-  /* req.body should look like this...
-    {
-      product_name: "Basketball",
-      price: 200.00,
-      stock: 3,
-      tagIds: [1, 2, 3, 4]
-    }
-  */
-  Product.create(req.body)
+router.post('/', (req, res) => {
+  Product.create({
+    product_name: req.body.product_name,
+    price: req.body.price,
+    stock: req.body.stock,
+    tagIds: request.body.tagIds
+  })
     .then((product) => {
-      // if there's product tags, we need to create pairings to bulk create in the ProductTag model
+      // if there are product tags, we need to create pairings to bulk create in the ProductTag model
       if (req.body.tagIds.length) {
         const productTagIdArr = req.body.tagIds.map((tag_id) => {
           return {

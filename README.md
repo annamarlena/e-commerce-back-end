@@ -1,4 +1,4 @@
-# E-Commerce Back End Project Using Object-Relational apping (ORM)
+# E-Commerce Back End Project Using Object-Relational Mapping (ORM)
 
 ## Objective
 
