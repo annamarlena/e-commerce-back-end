@@ -15,13 +15,11 @@ router.get('/', async (req, res) => {
 });
 
 /* 
+  OR use Gary's way?: 
 
-OR use Gary's way?: 
+  router.get('/', async (req, res) => res.json( await Product.findAll() ))
 
-router.get('/', async (req, res) => res.json( await Product.findAll() ))
-
-(5/3/23 01:31 also shows how to do this with get by id)
-
+  (5/3/23 01:31 also shows how to do this with get by id)
 */ 
 
 // GET one product

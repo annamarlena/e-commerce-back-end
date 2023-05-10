@@ -43,7 +43,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-// UPDATE a category by its id value
+// UPDATE a category 
 router.put('/:id', (req, res) => {
   Category.update(
     req.body, 
