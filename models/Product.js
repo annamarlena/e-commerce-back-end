@@ -2,7 +2,7 @@
 const { Model, DataTypes } = require('sequelize');
 // import our database connection from config.js
 const sequelize = require('../config/connection');
-const { toDefaultValue } = require('sequelize/types/lib/utils');
+
 
 class Product extends Model {}
 
@@ -14,7 +14,7 @@ Product.init(
     primaryKey: true,  
     autoIncrement: true
   },
-  productName: {
+  product_name: {
     type: DataTypes.STRING,
     allowNull: false
   },

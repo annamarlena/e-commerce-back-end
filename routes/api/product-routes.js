@@ -1,11 +1,9 @@
 const router = require('express').Router();
 const { Product, Category, Tag, ProductTag } = require('../../models');
 
-// The `/api/products` endpoint
-
 // GET all products
 router.get('/', async (req, res) => {
-  // be sure to include its associated Category and Tag data  <---- what is this? Can I use Gary's way below instead?
+  // be sure to include its associated Category and Tag data 
   try {
     const productData = await Product.findAll();
     res.status(200).json(productData);
@@ -13,14 +11,6 @@ router.get('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
-
-/* 
-  OR use Gary's way?: 
-
-  router.get('/', async (req, res) => res.json( await Product.findAll() ))
-
-  (5/3/23 01:31 also shows how to do this with get by id)
-*/ 
 
 // GET one product
 router.get('/:id', async (req, res) => {
