@@ -6,4 +6,4 @@ The objective of this project is to build the back end for a fictional e-commerc
 
 ## Link to Demo Video
 
-Open [https://drive.google.com/file/d/1dOGxgQvmgPRIj91eN3BvF9RdHSbKuVrt/view] (https://drive.google.com/file/d/1dOGxgQvmgPRIj91eN3BvF9RdHSbKuVrt/view) to watch the demo video.
+Open [https://drive.google.com/file/d/1dOGxgQvmgPRIj91eN3BvF9RdHSbKuVrt/view](https://drive.google.com/file/d/1dOGxgQvmgPRIj91eN3BvF9RdHSbKuVrt/view) to watch the demo video.
